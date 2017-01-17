@@ -23,7 +23,7 @@ def parse_html(data):
     for coment in alldiv.find_all('div'):
         name=coment.find('span',class_="futoji")
         point=coment.find('span',class_="red")
-        gal_name_list.append(point.text+name.text)
+        gal_name_list.append([point.text,name.text])
 
     nextPage=soup.find('tbody').find('td').next_sibling.next_sibling.find('a')
     # 注意字符串要加上u开头，可以使用isinstance(nextPage,Unicode)来判断是否unicode
@@ -38,7 +38,8 @@ def main():
         while url:
             data=download_page(url)
             gals,url=parse_html(data)
-            fp.write(u'{gals}\n'.format(gals='\n'.join(gals)))
+            for datalist in gals:
+                fp.write(u'point:{point}---{gals}\n'.format(gals=datalist[1],point=datalist[0]))
 
 if __name__=='__main__':
     main()
