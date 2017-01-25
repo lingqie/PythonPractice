@@ -26,7 +26,7 @@ def parse_html(data):
         gal_name_list.append([point.text,name.text])
 
     nextPage=soup.find('tbody').find('td').next_sibling.next_sibling.find('a')
-    # 注意字符串要加上u开头，可以使用isinstance(nextPage,Unicode)来判断是否unicode
+    # 注意字符串要加上u开头，可以使用isinstance(nextPage,unicode)来判断是否unicode
     if u'\u6b21\u306e' in nextPage.text:
         print index + nextPage['href']
         return gal_name_list,index + nextPage['href']

@@ -2,11 +2,11 @@
 import requests
 from bs4 import BeautifulSoup as BS
 import time
-# from subprocess import Popen  # 打开图片
 import cookielib
 import re
 # sudo pip install Pillow
 from PIL import Image
+
 
 # 模拟浏览器访问
 headers = {
