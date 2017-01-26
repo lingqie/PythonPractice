@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import requests ##导入requests
@@ -92,10 +92,10 @@ def download_single_image(image_url,proxy_flag=False,try_time=0):#首先尝试�
 					print('图片通过IP代理处理成功！')
 					return image_html  # 代理成功下载！
 				else:
-					return = download_single_image(image_url, proxy_flag=True, try_time=(try_time + 1))
+					return download_single_image(image_url, proxy_flag=True, try_time=(try_time + 1))
 			except:
 				print('IP代理下载失败')
-				return = download_single_image(image_url, proxy_flag=True, try_time=(try_time+1))  # 否则调用自己，使用3次IP代理
+				return download_single_image(image_url, proxy_flag=True, try_time=(try_time+1))  # 否则调用自己，使用3次IP代理
 		else:
 			print('图片未能下载')
 			return None
