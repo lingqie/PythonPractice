@@ -6,7 +6,7 @@ import time
 from bs4 import BeautifulSoup
 
 # index="http://www.qiushibaike.com"
-URL="http://seesaawiki.jp/aigis/d/%a5%d7%a5%e9%a5%c1%a5%ca"
+URL="http://seesaawiki.jp/aigis/d/%a5%a2%a5%a4%a5%a2%a5%f3"
 # position = '/Users/developer/Documents/blog/aigis/image/golden'
 
 def download_page(url):
@@ -34,7 +34,7 @@ def find_data_in_html_content(data):
         # driver.get(path);
         # driver.save_screenshot("4%02d.png"%i)
         pic = requests.get(path)
-        fp = open("/Users/developer/Documents/blog/aigis/image/platinum/5%02d.png"%(i+1), 'wb')
+        fp = open("/Users/developer/Documents/blog/aigis/image/iron/1%02d.png"%(i+1), 'wb')
         fp.write(pic.content)
         # print position+each
         fp.close()
